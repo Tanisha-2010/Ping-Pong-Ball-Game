@@ -1,0 +1,35 @@
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/682/277/non_2x/rainbow-gradient-blurred-wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#heading {
+    width: 100%;
+    background-color: white;
+    line-height: 1.5;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+}
+
+#instrutions {
+    font-size: 20px;
+    float: right;
+    border-radius: 5px;
+}
+
+#play_button {
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: 'Special Elite', cursive;
+    border: solid white 2px;
+}
+
+#status {
+    font-size: 20px;
+    border: solid white 2px;
+    background-color: palevioletred;
+    width: 80px;
+    border-radius: 5px;
+    line-height: 1.5;
+}
