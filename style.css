@@ -18,18 +18,34 @@ body {
     border-radius: 5px;
 }
 
-#play_button {
+#play_button,
+#btn_restart {
     font-size: 20px;
     border-radius: 5px;
     font-family: 'Special Elite', cursive;
     border: solid white 2px;
+    line-height: 1.5;
 }
 
 #status {
     font-size: 20px;
     border: solid white 2px;
     background-color: palevioletred;
-    width: 80px;
+    color: white;
     border-radius: 5px;
     line-height: 1.5;
+}
+
+.modal-dialog {
+    width: 90%;
+}
+
+#footer {
+    background-color: white;
+    line-height: 3;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Pacifico', cursive;
 }
