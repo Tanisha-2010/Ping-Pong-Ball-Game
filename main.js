@@ -24,6 +24,10 @@ var ball = {
     dy: 3
 }
 
+right_wrist_x = 0;
+right_wrist_y = 0;
+right_wrist_score = 0;
+
 function setup() {
     var canvas = createCanvas(1000, 800);
     canvas.parent("canvas");
@@ -38,9 +42,27 @@ function setup() {
     poseNet.on("pose", gotPoses);
 }
 
+function gotPoses(results) {
+
+    if (results.length > 0) {
+        console.log(results);
+        right_wrist_x = results[0].pose.rightWrist.x;
+        right_wrist_y = results[0].pose.rightWrist.y;
+    }
+}
+
+function modelLoaded() {
+    console.log("Model is loaded");
+}
+
 
 function draw() {
 
+    if (right_wrist_score > 0.2) {
+        fill("pink");
+        stroke("pink");
+        circle(right_wrist_x, right_wrist_y, 30);
+    }
     background(0);
 
     fill("black");
