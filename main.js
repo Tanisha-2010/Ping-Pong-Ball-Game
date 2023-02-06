@@ -27,6 +27,7 @@ var ball = {
 right_wrist_x = 0;
 right_wrist_y = 0;
 right_wrist_score = 0;
+game_status = "";
 
 function setup() {
     var canvas = createCanvas(1000, 800);
@@ -55,10 +56,14 @@ function modelLoaded() {
     console.log("Model is loaded");
 }
 
+function startGame() {
+    game_status = "start";
+    document.getElementById("status").innerHTML = "Game is Loaded";
+}
 
 function draw() {
 
-    if (right_wrist_score > 0.2) {
+    if (game_status = "start") {
         fill("pink");
         stroke("pink");
         circle(right_wrist_x, right_wrist_y, 30);
