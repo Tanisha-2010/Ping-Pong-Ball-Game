@@ -4,6 +4,14 @@ body {
     background-repeat: no-repeat;
 }
 
+#canvas {
+    border: solid white 15px;
+    box-shadow: gray 20px 20px 20px;
+    width: 1000px;
+    border-radius: 20px;
+    height: 800px;
+}
+
 #heading {
     width: 100%;
     background-color: white;
