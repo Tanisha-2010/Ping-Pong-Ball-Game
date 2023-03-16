@@ -43,6 +43,11 @@ function setup() {
     poseNet.on("pose", gotPoses);
 }
 
+function preload() {
+    ball_touch = loadSound("ball_touch_paddel.wav");
+    missed_ball = loadSound("missed.wav");
+}
+
 function gotPoses(results) {
 
     if (results.length > 0) {
@@ -59,6 +64,12 @@ function modelLoaded() {
 function startGame() {
     game_status = "start";
     document.getElementById("status").innerHTML = "Game is Loaded";
+}
+
+function restart() {
+    pcscore = 0;
+    playerscore = 0;
+    loop();
 }
 
 function draw() {
@@ -159,10 +170,12 @@ function move() {
         if (ball.y >= paddle1Y && ball.y <= paddle1Y + paddle1Height) {
             ball.dx = -ball.dx + 0.5;
             playerscore++;
+            ball_touch.play();
         } else {
             pcscore++;
             reset();
             navigator.vibrate(100);
+            missed_ball.play();
         }
     }
     if (pcscore == 4) {
@@ -173,7 +186,7 @@ function move() {
         stroke("white");
         textSize(25)
         text("Game Over!☹☹", width / 2, height / 2);
-        text("Reload The Page!", width / 2, height / 2 + 30)
+        text("Press the Restart button to play again", width / 2, height / 2 + 30)
         noLoop();
         pcscore = 0;
     }
